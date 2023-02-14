@@ -1,20 +1,22 @@
 import React from 'react';
 import {CssBaseline} from "@mui/material";
-import AppHeader from "./header/AppHeader";
-import AppFooter from "./footer/AppFooter";
-import AppMain from "./main/AppMain";
+import AppHeader from "./modules/AppHeader";
+import AppFooter from "./modules/AppFooter";
+import { BrowserRouter } from "react-router-dom";
+import Routing from "./modules/routing/Routing";
 
 function App() {
   return (
-    <>
-      <CssBaseline>
-          <AppHeader />
-          <main>
-              <AppMain />
-          </main>
-          <AppFooter />
-      </CssBaseline>
-    </>
+      <>
+          <CssBaseline>
+              <BrowserRouter>
+                  <AppHeader />
+                  <Routing />
+                  <AppFooter />
+              </BrowserRouter>
+          </CssBaseline>
+      </>
+
   );
 }
 

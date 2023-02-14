@@ -1,7 +1,7 @@
 import React from "react";
 import {AppBar, Toolbar, Typography} from "@mui/material";
 import PersonIcon from '@mui/icons-material/Person';
-import useStyles from "../styles/HeaderStyle";
+import useStyles from "../assets/styles/HeaderStyle";
 
 const AppHeader = () => {
 const classes = useStyles();
