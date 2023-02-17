@@ -8,10 +8,8 @@ const User = () => {
     useEffect( () => {
         const getAllUsers = () => {
             api.get("/users/").then((response) => {
-                console.log(response);
-                console.log(response.data);
                 setUsers(response.data);
-            })
+            });
         }
         getAllUsers();
     }, []);

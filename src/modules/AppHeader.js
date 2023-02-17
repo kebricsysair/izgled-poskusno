@@ -2,6 +2,7 @@ import React from "react";
 import {AppBar, Toolbar, Typography} from "@mui/material";
 import PersonIcon from '@mui/icons-material/Person';
 import useStyles from "../assets/styles/HeaderStyle";
+import {Link} from "react-router-dom";
 
 const AppHeader = () => {
 const classes = useStyles();
@@ -13,6 +14,10 @@ const classes = useStyles();
                     <Typography variant="h6">
                         IMENIK
                     </Typography>
+                    <nav>
+                        <Link to="/systemair/users"> Uporabniki </Link>
+                        <Link to="/nekam">error page</Link>
+                    </nav>
                 </Toolbar>
             </AppBar>
         </>
