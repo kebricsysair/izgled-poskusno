@@ -11,12 +11,8 @@ const classes = useStyles();
             <AppBar position="relative">
                 <Toolbar>
                     <PersonIcon className={classes.personIcon}/>
-                    <Typography variant="h6">
-                        IMENIK
-                    </Typography>
-                    <nav>
-                        <Link to="/systemair/users"> Uporabniki </Link>
-                        <Link to="/nekam">error page</Link>
+                    <nav className={classes.navStyle}>
+                        <Link className={classes.linkStyle} to="/systemair/users"> IMENIK </Link>
                     </nav>
                 </Toolbar>
             </AppBar>

@@ -2,8 +2,10 @@ import React, {useEffect, useState} from "react";
 import api from "../../services/api";
 import {Container, Grid, Typography} from "@mui/material";
 import UserButton from "./UserButton";
+import useStyles from "../../assets/styles/UserButtonStyle";
 
 const User = () => {
+    const style = useStyles();
     const[users, setUsers] = useState([]);
     useEffect( () => {
         const getAllUsers = () => {
@@ -15,8 +17,7 @@ const User = () => {
     }, []);
     return(
         <main>
-            <Container maxWidth="lg">
-                <Typography gutterBottom variant="h6"> Vsi uporabniki: </Typography>
+            <Container maxWidth="md" className={style.containerStyle}>
                 <Grid container spacing={3}>
                     {
                         users.map((user) => {
