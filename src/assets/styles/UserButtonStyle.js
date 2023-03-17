@@ -7,10 +7,12 @@ const useStyles = makeStyles({
     },
     typoStyle: {
         padding: "15px",
-        color: "black"
+        color: "black",
+
     },
     containerStyle: {
-        paddingTop: "20px"
+        marginTop: "25px",
+        marginBottom: "25px"
     }
 })
 export default useStyles;

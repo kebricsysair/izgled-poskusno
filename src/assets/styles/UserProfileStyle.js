@@ -6,7 +6,8 @@ const useStyles = makeStyles({
         backgroundColor: "whitesmoke"
     },
     containerStyle: {
-        marginTop: "25px"
+        marginTop: "25px",
+        marginBottom: "25px"
     }
 })
 

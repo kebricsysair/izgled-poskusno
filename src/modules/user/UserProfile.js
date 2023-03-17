@@ -23,7 +23,7 @@ const UserProfile = () => {
                     <Grid item xs={12} key={users.id} className={styles.itemStyle}>
                         to je profil za uporabnika z idjem {id}
                         {
-                            users.name
+                            users.name + " " + users.department
                         }
                     </Grid>
 
