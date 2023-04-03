@@ -9,10 +9,6 @@ const useStyles = makeStyles({
         padding: "15px",
         color: "black",
 
-    },
-    containerStyle: {
-        marginTop: "25px",
-        marginBottom: "25px"
     }
 })
 export default useStyles;

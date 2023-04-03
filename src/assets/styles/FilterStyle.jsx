@@ -15,6 +15,9 @@ const filterUseStyles = makeStyles({
     inputText: {
         minWidth: "200px",
         marginRight: "30px"
+    },
+    filtBtn: {
+        padding: "100px"
     }
 })
 export default filterUseStyles;

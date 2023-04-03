@@ -8,8 +8,11 @@ const UserButton = (props) => {
     const navigate = useNavigate();
     let userId = props.user.id;
     return(
-        <Grid item xs={12} key={props.user.id}>
-            <Button variant="text" className={styleClass.buttonStyle} onClick={() => navigate(`/systemair/user/${userId}`)}>
+        <Grid item xs={12} key={props.user.id} style={{margin: "5px", paddingBottom: "5px", paddingTop: "5px"}}>
+            <Button variant="text"
+                    className={styleClass.buttonStyle}
+                    style={{borderRadius: "20px"}}
+                    onClick={() => navigate(`/systemair/user/${userId}`)}>
                 <Typography variant="h6" className={styleClass.typoStyle}>
                     {props.user.name} + {props.user.surname}
                 </Typography>
