@@ -10,12 +10,11 @@ import {
     InputLabel,
     MenuItem,
     Select,
-    TextField
+    TextField, Typography
 } from "@mui/material";
 import UserButton from "./UserButton";
 import useStyles from "../../assets/styles/UserButtonStyle";
 import filterUseStyles from "../../assets/styles/FilterStyle";
-import FilterAltIcon from '@mui/icons-material/FilterAlt';
 
 
 const User = () => {
@@ -42,7 +41,7 @@ const User = () => {
             });
         }
         getAllUsers();
-    }, /*[department, name, surname] */ []);
+    }, []);
 
     const filteredUsers = () => {
         console.log(department + "   " + name + "    " + surname)
@@ -60,67 +59,80 @@ const User = () => {
     }
     return (
         <main>
-            <Container maxWidth={"lg"}>
-                <Button onClick={handleShowFilter}
-                        startIcon={<FilterAltIcon />}
-                        variant="contained"
-                        style={{marginTop: "25px", marginBottom: "25px"}}>
-                     filtriraj
-                </Button>
-                <Collapse in={showFilter} style={{marginBottom: "50px"}}>
-                    <Box sx={{justifyContent: "center", display: "flex"}}
-                         style={{backgroundColor: "whitesmoke", padding: "30px", borderRadius: "20px"}}>
-                        <FormControl>
-                            <InputLabel id="label">Oddelek</InputLabel>
-                            <Select id="oddelek-filt-select"
-                                    value={department}
-                                    labelId="label"
-                                    onChange={handleDepartmentChange}
-                                    label="Department"
-                                    className={filterStyle.select}>
-                                {
-                                    listOfDepartments.map((department) => {
-                                        console.log(department)
-                                        return (<MenuItem value={department} key={department}>{department}</MenuItem>)
-                                    })
-                                }
-                            </Select>
-                        </FormControl>
-                        <TextField id="imeTextField"
-                                   label="Ime"
-                                   value={name}
-                                   className={filterStyle.inputText}
-                                   style={{marginRight: "30px"}}
-                                   onChange={(e) => {
-                                       setName(e.target.value)
-                                   }}>
-                        </TextField>
-                        <TextField id="priimekTextField"
-                                   label="Priimek"
-                                   value={surname}
-                                   style={{marginRight: "30px"}}
-                                   onChange={(e) => {
-                                       setSurname(e.target.value)
-                                   }}>
-                        </TextField><br/>
-                        <Button variant="outlined"
-                                onClick={filteredUsers}>
-                            Potrdi
-                        </Button>
-                    </Box>
-                </Collapse>
-            </Container>
-            <Container maxWidth="md"
-                       style={{backgroundColor: "whitesmoke", borderRadius: "20px", padding: "0px"}}>
-                <Grid container
-                      spacing={3}>
-                    {
-                        users.map((user) => {
-                            return (<UserButton user={user} key={user.id}/>)
-                        })
-                    }
-                </Grid>
-            </Container>
+            <Box sx={{display: "flex", displayDirection: "row", flexWrap: 'wrap'}}>
+                <Box sx={{backgroundColor: "white", marginLeft: "30px", maxWidth: "280px", marginRight: "30px"}}>
+                        <Box component="img"
+                             src="https://logovectorseek.com/wp-content/uploads/2020/01/systemair-logo-vector.png"
+                             sx={{width: "200px", height: "auto"}}
+                             alt="Systemair logo">
+
+                        </Box>
+                    <Typography variant="h5" gutterBottom>
+                        Filtriraj
+                    </Typography>
+                    <FormControl sx={{width: "250px", marginBottom: "20px", marginTop: "20px"}}>
+                        <InputLabel id="label">Oddelek</InputLabel>
+                        <Select id="oddelek-filt-select"
+                                value={department}
+                                labelId="label"
+                                onChange={handleDepartmentChange}
+                                label="Department"
+                        >
+                            {
+                                listOfDepartments.map((department) => {
+                                    console.log(department)
+                                    return (
+                                        <MenuItem value={department} key={department}>{department}</MenuItem>)
+                                })
+                            }
+                        </Select>
+                    </FormControl>
+                    <TextField id="imeTextField"
+                               label="Ime"
+                               value={name}
+                               className={filterStyle.inputText}
+                               onChange={(e) => {
+                                   setName(e.target.value)
+                               }}
+                               sx={{width: "250px", marginBottom: "20px"}}
+                    >
+                    </TextField>
+                    <TextField id="priimekTextField"
+                               label="Priimek"
+                               value={surname}
+                               onChange={(e) => {
+                                   setSurname(e.target.value)
+                               }}
+                               sx={{width: "250px", marginBottom: "20px"}}
+                    >
+                    </TextField>
+                    <Button variant="outlined"
+                            onClick={filteredUsers}
+                            sx={{width: "250px", height: "50px"}}
+                    >
+                        Potrdi
+                    </Button>
+                </Box>
+                <Box component="container" sx={{marginRight: "50px", marginLeft: "50px", flexGrow: 1}}>
+                    <Typography>mhm</Typography>
+                    <Grid container
+                          display="block"
+                          spacing={3}
+                          sx={{backgroundColor: "blue", marginTop: "30px"}}
+                    >
+                        {
+                            users.map((user) => {
+                                return (<UserButton user={user} key={user.id}/>)
+                            })
+                        }
+                    </Grid>
+                </Box>
+            </Box>
+            <Box>
+                <DataGrid>
+
+                </DataGrid>
+            </Box>
         </main>
     );
 }

@@ -8,7 +8,7 @@ const UserButton = (props) => {
     const navigate = useNavigate();
     let userId = props.user.id;
     return(
-        <Grid item xs={12} key={props.user.id} style={{margin: "5px", paddingBottom: "5px", paddingTop: "5px"}}>
+        <Grid xs={12} key={props.user.id} sx={{"&:hover": {backgroundColor: "red"}}}>
             <Button variant="text"
                     className={styleClass.buttonStyle}
                     style={{borderRadius: "20px"}}

@@ -2,7 +2,6 @@ import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles({
     buttonStyle: {
-        display: "block",
         width: "100%"
     },
     typoStyle: {

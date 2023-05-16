@@ -7,7 +7,7 @@ import {Link} from "react-router-dom";
 const AppHeader = () => {
 const classes = useStyles();
     return(
-        <>
+        <Box>
             <AppBar position="relative">
                 <Toolbar>
                     <PersonIcon className={classes.personIcon}/>
@@ -17,12 +17,7 @@ const classes = useStyles();
                     </nav>
                 </Toolbar>
             </AppBar>
-            <Box>
-                <img src="../assets/images/logo.jpg"
-                     sx={{ width: "100%", height: "auto"}}
-                     alt="Systemair logo" />
-            </Box>
-        </>
+        </Box>
     );
 }
 
